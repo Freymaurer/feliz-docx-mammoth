@@ -8,6 +8,12 @@ open Feliz
 
 let log o = Browser.Dom.console.log o
 
+type URL = 
+  abstract member createObjectURL: Browser.Types.File -> string
+
+[<Emit("URL")>]
+let URL: URL = jsNative
+
 [<RequireQualifiedAccess>]
 module StaticFile =
 
